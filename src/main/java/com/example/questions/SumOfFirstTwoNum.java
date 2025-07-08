@@ -1,7 +1,10 @@
 package com.example.questions;
 
+import java.awt.desktop.SystemEventListener;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 public class SumOfFirstTwoNum {
     public static void main(String[] args) {
@@ -13,6 +16,14 @@ public class SumOfFirstTwoNum {
                 .sum();
 
         System.out.println(ans);
+
+        // If the requirement it to multiply
+        // reduce converts whole stream into one result
+        Optional<Integer> product =list.stream()
+                .limit(2)
+                .reduce((a,b)->a*b);
+
+        product.ifPresent(System.out::println);
     }
 
 }
